@@ -2,9 +2,6 @@ module Alto where
 
 import Euterpea
 
-fugue :: Music Pitch
-fugue = tempo (4/7) $ instrument ChurchOrgan alto
-
 alto = foldl1 (:+:) [alto6, alto11, alto22, alto33, alto43, alto49,
                     alto55, alto61, alto67]
 
