@@ -12,7 +12,7 @@ fuguetest :: Music Pitch
 fuguetest = tempo (4/7) (instrument ChurchOrgan (tenor12))
 
 tenor1 :: Music Pitch
-tenor1 = rest (24/2)
+tenor1 = timesM 6 wnr :+: hnr
 
 tenor12 :: Music Pitch
 tenor12 = line [g 4 qn,d 5 qn,bf 4 dqn] :+: (toEN [A,G,Bf,A,G,Fs,A] 4) :+: line [d 4 qn]
