@@ -35,7 +35,7 @@ tenor14 = (toEN [G,D,A,D] 4) :+:
 
 tenor18 :: Music Pitch
             -- m18 beat 3 aka clef change
-tenor18 = (toSN [F,G,F,G] 5) :+: line [trill 2 (1/32) (g 5 den), f 5 sfn, g 5 tn] :+: 
+tenor18 = (toSN [F,G,F,G] 5) :+: line [trill 2 trillDur (g 5 den), f 5 sfn, g 5 tn] :+: 
             -- m19
             (toSN [A,G,A,Bf,  A,G,F,E,    F,A,G,A] 5) :+: line [cs 5 sn, a 5 sn, g 5 sn, a 5 sn] :+:
             -- m20
@@ -45,7 +45,7 @@ tenor18 = (toSN [F,G,F,G] 5) :+: line [trill 2 (1/32) (g 5 den), f 5 sfn, g 5 tn
 
 tenor21 :: Music Pitch
             -- m21 beat 3
-tenor21 = line [f 5 en, e 5 sn, d 5 sn, trill 1 (1/32) (cs 5 den), d 5 sn] :+:
+tenor21 = line [f 5 en, e 5 sn, d 5 sn, trill 1 trillDur (cs 5 den), d 5 sn] :+:
             -- m22
             (toSN [D,C,D,E,   D,C] 5) :+: (toSN [Bf,A] 4) :+:
             -- m22 beat 3, aka the clef change
@@ -63,7 +63,7 @@ tenor24 = rest (1/16) :+: line[a 4 sn, bf 4 sn, c 5 sn, d 5 qn] :+:
             -- m26
             (toSN [G,Bf,A,G,  Fs,G,E,Fs,  G,D,E,Fs,   G,D,G,A] 4) :+:
             -- m27
-            line [bf 4 sn, c 5 sn, bf 4 sn, c 5 sn, trill 2 (1/32) (c 5 den), bf 4 tn, c 5 tn] :+:
+            line [bf 4 sn, c 5 sn, bf 4 sn, c 5 sn, trill 2 trillDur (c 5 den), bf 4 tn, c 5 tn] :+:
             -- m27 beat 3
             (toSN [D,C,D,Ef,  D,C] 5) :+: line [bf 4 sn, a 4 sn] :+:
             -- m28
@@ -109,7 +109,7 @@ tenor41 :: Music Pitch
             -- m41
 tenor41 = line [bf 4 sn, c 5 sn, d 5 sn, bf 4 sn] :+: (toSN [C,D,Ef,C,  D,C] 5) :+: line [bf 4 sn] :+: (toSN [C,  D,Ef,D,Ef] 5) :+:
             -- m42
-            (toSN [F,G,F,G] 5) :+: line [trill 2 (1/32) (g 5 den), f 5 tn, g 5 tn] :+:
+            (toSN [F,G,F,G] 5) :+: line [trill 2 trillDur (g 5 den), f 5 tn, g 5 tn] :+:
             -- m42 beat 3
             (toSN [A,G,A,Bf,  A,G,F,Ef] 5) :+:
             -- m43
@@ -183,3 +183,6 @@ toEN ps o = let f p = Prim (Note en (p,o))
 toSN :: [PitchClass] -> Octave -> Music Pitch
 toSN ps o = let f p = Prim (Note sn (p,o))
             in  line (map f ps)
+
+trillDur :: Dur
+trillDur = tn * 2/3
