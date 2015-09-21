@@ -77,8 +77,5 @@ duration d fs = line $ map (\f -> f d) fs
 octave :: Octave -> [Octave -> Dur -> Music Pitch] -> [Dur -> Music Pitch]
 octave o fs = map (\f -> f o) fs
 
-followEach :: [Music Pitch] -> Music Pitch -> Music Pitch
-followEach ms m = foldl1 (:+:) (map (:+: m) ms)
-
 trillDur :: Dur
 trillDur = tn * 2/3
