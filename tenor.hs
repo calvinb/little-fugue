@@ -5,8 +5,6 @@ import Euterpea
 tenor = foldl1 (:+:) [tenor1, tenor12, tenor14, tenor18, tenor21, tenor24, tenor29, tenor32, tenor37,
                         tenor41, tenor44, tenor51, tenor55, tenor62, tenor67]
 
---main = play (tenor)
-
 fugue :: Music Pitch
 fugue = tempo (4/7) (instrument ChurchOrgan (tenor1 :+: tenor12 :+: tenor14 :+: tenor18 :+: tenor21 :+: tenor24 :+:
                                                 tenor29 :+: tenor32 :+: tenor37 :+: tenor41 :+: tenor44 :+: tenor51 :+:
