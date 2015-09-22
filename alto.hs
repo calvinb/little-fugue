@@ -43,7 +43,7 @@ alto49 = line [c 5 qn, qnr, enr, c 5 en, af 5 en, f 5 (en + qn + sn)] :+:
                       [b 4, d 5, c 5, g 4] ++
                       octave 5 [c, d, ef, f, ef, f, g, ef, c, g,
                                 af, f, g, af, d, ef, d, c]) :+:
-          line [b 4 en, d 5 en, g 4 (hn + wn + hn + en), g 5 en] :+:
+          line [b 4 en, d 5 en, timesM 8 (g 4 qn), g 4 en, g 5 en] :+:
           duration sn (octave 5 [f, ef, d, f])
 
 alto55 = line [ef 5 qn, qnr, enr, c 5 en, a 4 en, f 4 en,
